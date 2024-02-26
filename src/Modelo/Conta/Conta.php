@@ -1,5 +1,8 @@
 <?php
 
+
+namespace Alura\Banco\Modelo\Conta;
+
 class Conta
 {
     private static int $numeroDeContas = 0;

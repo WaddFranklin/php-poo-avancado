@@ -1,11 +1,9 @@
 <?php
 
-require_once './src/Pessoa.php';
-require_once './src/Titular.php';
-require_once './src/Funcionario.php';
-require_once './src/Cpf.php';
-require_once './src/Endereco.php';
-require_once './src/Conta.php';
+require_once './autoload.php';
+
+use Alura\Banco\Modelo\{Pessoa, Cpf, Endereco, Funcionario};
+use Alura\Banco\Modelo\Conta\{Titular, Conta};
 
 $pessoa = new Pessoa('Fulano', new Cpf('123.123.123-12'));
 

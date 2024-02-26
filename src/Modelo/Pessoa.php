@@ -1,5 +1,7 @@
 <?php
 
+namespace Alura\Banco\Modelo;
+
 class Pessoa {
     protected string $nome;
     protected Cpf $cpf;
@@ -24,7 +26,9 @@ class Pessoa {
     protected function validaNomeTitular(string $nomeTitular): void
     {
         if (strlen($nomeTitular) < 5) {
-            throw new Exception("O nome precisa ter mais do que 5 caracteres!");
+            // throw new Exception("O nome precisa ter mais do que 5 caracteres!");
+            echo "O nome precisa ter mais do que 5 caracteres!" . PHP_EOL;
+            exit();
         }
     }
 }
