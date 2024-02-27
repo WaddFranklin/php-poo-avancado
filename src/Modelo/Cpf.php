@@ -2,12 +2,14 @@
 
 namespace Alura\Banco\Modelo;
 
-class Cpf
+use Exception;
+
+final class Cpf
 {
     private string $cpf;
 
     public function __construct(string $cpf)
-    {   
+    {
         $this->validaCpf($cpf);
         $this->cpf = $cpf;
     }

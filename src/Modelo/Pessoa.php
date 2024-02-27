@@ -2,13 +2,16 @@
 
 namespace Alura\Banco\Modelo;
 
-abstract class Pessoa {
+abstract class Pessoa
+{
+    use AcessoPropriedade;
+
     protected string $nome;
     protected Cpf $cpf;
 
     public function __construct(string $nome, Cpf $cpf)
     {
-        $this->validaNomeTitular($nome);
+        $this->validaNome($nome);
         $this->nome = $nome;
         $this->cpf = $cpf;
     }
@@ -23,7 +26,7 @@ abstract class Pessoa {
         return $this->cpf->recuperaCpf();
     }
 
-    protected function validaNomeTitular(string $nomeTitular): void
+    final protected function validaNome(string $nomeTitular): void
     {
         if (strlen($nomeTitular) < 5) {
             // throw new Exception("O nome precisa ter mais do que 5 caracteres!");
